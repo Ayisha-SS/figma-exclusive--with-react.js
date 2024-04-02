@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom'
 function NavBar() {
   return (
     <div className='flex items-center justify-between'>
+<<<<<<< HEAD
         <h1 className=' w-50%'>
+=======
+        <h1>
+>>>>>>> c0c41f5bc970ff3c3fe2ffd36bd4dec30d84f96b
             <Link to='/'>
                 <img src="src\assests\images\Logo.png" alt="Logo" />
             </Link>
