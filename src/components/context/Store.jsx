@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const DataContext = createContext();
 
@@ -198,11 +198,17 @@ export const Context = ({ children }) =>{
         },
     ]);
 
+    const [selectedCategory, setSelectedCategory] = useState('all');
+
     return (
-        <DataContext.Provider value={{ data }}>
+        <DataContext.Provider value={{ data, setData, selectedCategory, setSelectedCategory }}>
             {children}
         </DataContext.Provider>
     );
+};
+
+export const useDataContext = () =>{
+   return  useContext(DataContext)
 };
 
 export default DataContext;

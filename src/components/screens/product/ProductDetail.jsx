@@ -7,14 +7,19 @@ function ProductDetail() {
 
     const { id } = useParams();
     const { data } = useContext(DataContext);
-    const product = data.find(item => item.id === parseInt(id));
-
+    const product = data.find(item => item.id === id);
+    
+    // if(!product){
+    //     return(
+    //         <div>product not found</div>
+    //     )
+    // }
   return (
     <>
         <div className='py-20'>
             <div className='wrapper'>
                 <div>
-                    <h4 className='text-sm leading-5 font-normal text-[#000] '>Account / {product.type} / <span className='text-[#000]'>Zerbonics</span></h4>
+                    <h4 className='text-sm leading-5 font-normal text-[#000] '>Account / { product.type} / <span className='text-[#000]'>Zerbonics</span></h4>
                 </div>
                 <div className='flex py-20 mb-12'>
                     <div className='flex items-center'>
@@ -78,7 +83,7 @@ function ProductDetail() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  
                 <div className='pb-10'>
                     <div className='flex items-center'>
                         <svg width={40} height={40}>
