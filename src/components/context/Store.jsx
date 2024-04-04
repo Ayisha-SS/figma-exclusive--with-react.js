@@ -14,7 +14,7 @@ export const Context = ({ children }) =>{
         },
         {
             id:2,
-            image:"assests/images/gaming/sony-1.jpg",
+            image:"assests/images/gaming/sony-1-removebg-preview.png",
             name:"Sony DualSense Wireless Controller white",
             type:"gaming",
             quantity:3,
@@ -22,7 +22,7 @@ export const Context = ({ children }) =>{
         },
         {
             id:3,
-            image:"assests/images/headphones/boat-1.jpg",
+            image:"assests/images/headphones/boat-1-removebg-preview.png",
             name:"boAt Rockerz 450 Bluetooth with Mic",
             type:"headphone",
             quantity:3,
@@ -30,7 +30,7 @@ export const Context = ({ children }) =>{
         },
         {
             id:4,
-            image:"assests/images/camera/meike-1.jpg",
+            image:"assests/images/camera/meike-1-removebg-preview.png",
             name:"Meike 85mm wide Aperture Nikon Cameras",
             type:"camera",
             quantity:3,
@@ -46,7 +46,7 @@ export const Context = ({ children }) =>{
         },
         {
             id:6,
-            image:"assests/images/laptop/mac-1.jpg",
+            image:"assests/images/laptop/mac-1-removebg-preview.png",
             name:"Apple M3 Macbook",
             type:"laptop",
             quantity:3,
@@ -54,7 +54,7 @@ export const Context = ({ children }) =>{
         },
         {
             id:7,
-            image:"assests/images/headphones/jbl-1.webp",
+            image:"assests/images/headphones/jbl-1.png",
             name:"JBL TUNE 770NC",
             type:"headphone",
             quantity:3,
@@ -70,7 +70,7 @@ export const Context = ({ children }) =>{
         },
         {
             id:9,
-            image:"assests/images/phone/galaxy-1.webp",
+            image:"assests/images/phone/galaxy-1-removebg-preview.png",
             name:"Samsung Galaxy S24 ultra SA AI",
             type:"phone",
             quantity:3,
@@ -102,7 +102,7 @@ export const Context = ({ children }) =>{
         },
         {
             id:13,
-            image:"assests/images/phone/phone-1.jpg",
+            image:"assests/images/phone/phone-1-removebg-preview.png",
             name:"onePlus 12",
             type:"phone",
             quantity:3,
@@ -142,7 +142,7 @@ export const Context = ({ children }) =>{
         },
         {
             id:18,
-            image:"assests/images/camera/nikon-1.jpg",
+            image:"assests/images/camera/nikon-1-removebg-preview.png",
             name:"Nikon D7500 20.9MP Digital SLR",
             type:"camera",
             quantity:3,
@@ -150,7 +150,7 @@ export const Context = ({ children }) =>{
         },
         {
             id:19,
-            image:"assests/images/phone/redmi-1.webp",
+            image:"assests/images/phone/redmi-1-removebg-preview.png",
             name:"Redmi 12 5G",
             type:"phone",
             quantity:3,
@@ -174,7 +174,7 @@ export const Context = ({ children }) =>{
         },
         {
             id:22,
-            image:"assests/images/camera/sports-1.jpg",
+            image:"assests/images/camera/sports-1-removebg-preview.png",
             name:"4K Sports Camera 2199",
             type:"camera",
             quantity:3,
@@ -182,7 +182,7 @@ export const Context = ({ children }) =>{
         },
         {
             id:23,
-            image:"assests/images/gaming/zerbo-1.jpg",
+            image:"assests/images/gaming/zerbo-1-removebg-preview.png",
             type:"gaming",
             name:"Zerbonics",
             quantity:3,
@@ -190,7 +190,7 @@ export const Context = ({ children }) =>{
         },
         {
             id:24,
-            image:"assests/images/headphones/razer-1.webp",
+            image:"assests/images/headphones/razer-1.png",
             name:"Razer Blackshark V2X",
             type:"headphone",
             quantity:3,
@@ -199,9 +199,27 @@ export const Context = ({ children }) =>{
     ]);
 
     const [selectedCategory, setSelectedCategory] = useState('all');
+    const [ searchTerm, setSearchTerm ] = useState('');
+
+    const search = (term) => {
+        setSearchTerm(term.toLowerCase().trim());
+    };
+
+    const filteredData = data.filter(item => {
+        return item.name.toLowerCase().includes(searchTerm) || searchTerm == '';
+    });
+
+const info = {
+    data:filteredData,
+    setData,
+    selectedCategory,
+    setSelectedCategory,
+    search,
+    searchTerm
+}
 
     return (
-        <DataContext.Provider value={{ data, setData, selectedCategory, setSelectedCategory }}>
+        <DataContext.Provider value={info}>
             {children}
         </DataContext.Provider>
     );

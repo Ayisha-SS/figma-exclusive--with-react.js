@@ -1,13 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { CiHeart } from "react-icons/ci";
 import { useParams } from 'react-router-dom';
-import DataContext from '../../context/Store';
+// import DataContext from '../../context/Store';
+import { useDataContext } from '../../context/Store';
 
 function ProductDetail() {
 
     const { id } = useParams();
-    const { data } = useContext(DataContext);
+    // const { data } = useContext(DataContext);
+    const { data } = useDataContext();
     const product = data.find(item => item.id === id);
+
+    // const [ mainImg, setMainImg ] = useState(product.image);
+
+    // const handleImg = (img) => {
+    //     setMainImg(img);
+    // }
     
     // if(!product){
     //     return(
@@ -36,7 +44,16 @@ function ProductDetail() {
                             <div className='bg-[#00000014] w-[30%] rounded'>
                                 <img src={require(`../../../assests/images/gaming/zerbo-4.jpg`)} alt="Zerbo-4" />
                             </div>
+
+                        {/* {product.images.map((image,index) => (
+                            <div className='bg-[#00000014] w-[30%] rounded' onClick={() => handleSidebarImageClick(image)}>
+                                <img src={require(`../../../${image}`)} alt={`product ${index}`} />
+                            </div>
+                        ))} */}
+                        
                         </div>
+
+
                         <div className='bg-[#00000014] rounded px-12 py-28 w-fit'>
                             <div className=''>
                                 <img src={require(`../../../assests/images/gaming/zerbo-1-removebg-preview.png`)} alt="Zerbo-1" />

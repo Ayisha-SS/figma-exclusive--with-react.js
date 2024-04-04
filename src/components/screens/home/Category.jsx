@@ -100,14 +100,14 @@ const handlePrevious = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex gap-7'>
+            <div className='flex justify-between '>
 
                 {data.slice(slide, slide + 6).map((product, index) => (
-                <div className='border border-[#000] flex flex-col p-16 rounded ' onClick={(e) => handleCategoryType(e,product.type)}>
-                    <div key={index} className=' mb-3' >
-                        <img src={require(`../../../${product.image}`)} alt={product.name} />
+                <div className='border border-[#000] flex flex-col p-4 rounded w-[170px] h-[145px] items-center justify-center cursor-pointer' onClick={(e) => handleCategoryType(e,product.type)}>
+                    <div key={index} className=' mb-3 w-[56px] h-[56px] ' >
+                        <img src={require(`../../../${product.image}`)} alt={product.name} style={{ width: '100%', height: 'auto' }} />
                     </div>
-                    <h5 className='text-base text-center font-semibold leading-6 w-[20%]' >
+                    <h5 className='text-base text-center font-semibold leading-6' >
                         <a href="#" >{product.name}</a>
                     </h5>
                 </div>

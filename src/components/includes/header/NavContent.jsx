@@ -2,12 +2,24 @@ import React from 'react'
 import { CiSearch } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
+import { useDataContext } from '../../context/Store';
 
 function NavContent() {
+
+const {search} = useDataContext();
+const handleSearch = (e) => {
+    search(e.target.value);
+}
+
   return (
     <div className='flex items-center gap-3'>
         <div className=' flex items-center '>
-            <input type="text" placeholder='What are you looking for?' className='bg-[#00000014] text-sm rounded py-2 pl-4 pr-16'/>
+            <input 
+                type="text" 
+                placeholder='What are you looking for?' 
+                className='bg-[#00000014] text-sm rounded py-2 pl-4 pr-16'
+                onChange={handleSearch}
+            />
             <CiSearch className='box-content absolute right-[210px]  size-6'/>
         </div>
         <div>

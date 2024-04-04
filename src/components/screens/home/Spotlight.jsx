@@ -1,19 +1,22 @@
-import React from 'react'
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 function Spotlight() {
 
 const data = [
     {
       category:"Phone",
-      image:"assests/images/phone/banner.avif"
+      image:"assests/images/phone/wallpaper.jpg"
     },
     {
       category:"Laptop",
-      image:"assests/images/laptop/images.jpg"
+      image:"assests/images/laptop/wallpaper.jpg"
     },
     {
       category:"Computer",
-      image:"assests/images/computer/banner.webp"
+      image:"assests/images/computer/wallpaper.jpg"
     },
     {
       category:"Smart Watch",
@@ -33,17 +36,28 @@ const data = [
     },
     {
       category:"Headphone",
-      image:"assests/images/headphones/banner.avif"
+      image:"assests/images/headphones/headphones.jpg"
     },
-]
+];
+
+const settings = {
+  dots:true,
+  infinite:true,
+  speed:500,
+  slidesToShow:1,
+  slidesToScroll:1,
+  autoplay:true,
+}
 
   return (
-    <div className='py-10'>
+    <div className='py-10 '>
+      <Slider {...settings} >
         {data.map((item,index) => 
-        <div key={index} className='w-[50%]'>
+        <div key={index} className='w-[950px] h-[456px] '>
             <img src={require(`../../../${item.image}`)} alt={item.category} />
         </div>
         )}
+      </Slider>
     </div>
   )
 }

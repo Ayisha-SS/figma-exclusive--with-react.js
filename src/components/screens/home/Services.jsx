@@ -4,7 +4,7 @@ function Services() {
   return (
     <>
         <div className='py-20 px-40'>
-            <div className='flex items-center gap-20'>
+            <div className='flex items-center gap-20 mb-10'>
                 <div className='flex flex-col gap-6 items-center'>
                     <div className='w-[50%]'>
                         <img src={require(`../../../assests/images/Services (1).png`)} alt="Service" />
