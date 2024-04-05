@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, {  useState } from 'react'
 import { CiHeart } from "react-icons/ci";
 import { PiEyeLight } from "react-icons/pi";
 import { Link } from 'react-router-dom';

@@ -108,7 +108,7 @@ const handlePrevious = () => {
                         <img src={require(`../../../${product.image}`)} alt={product.name} style={{ width: '100%', height: 'auto' }} />
                     </div>
                     <h5 className='text-base text-center font-semibold leading-6' >
-                        <a href="#" >{product.name}</a>
+                        {product.name}
                     </h5>
                 </div>
                 ))}  

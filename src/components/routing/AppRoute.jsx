@@ -11,7 +11,7 @@ function AppRoute() {
         <Context>
           <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/product/:id' element={<Product/>} />
+            <Route path='/product/:type' element={<Product/>} />
           </Routes>
         </Context>
       </Router>
