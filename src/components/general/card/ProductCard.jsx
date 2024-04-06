@@ -51,9 +51,9 @@ function ProductCard() {
                             <div className='flex gap-3'>
                                 <span className='text-base leading-6 font-medium text-[#DB4444]'>${item.price}</span>
                                 <span className='flex items-center'>
-                                <CiStar />
-                                <CiStar />
-                                <CiStar />
+                                <CiStar color='yellow'/>
+                                <CiStar color='yellow'/>
+                                <CiStar color='yellow'/>
                                 <CiStar />
                                 <CiStar />
                                 </span>
