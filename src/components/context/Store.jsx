@@ -105,10 +105,10 @@ export const Context = ({ children }) =>{
         },
         {
             id:10,
-            image:"assests/images/laptop/dell-1.jpg",
-            img2:"assests/images/laptop/dell-2.jpg",
-            img3:"assests/images/laptop/dell-3.jpg",
-            img4:"assests/images/laptop/dell-4.jpg",
+            image:"assests/images/laptop/dell-1.png",
+            img2:"assests/images/laptop/dell-2.png",
+            img3:"assests/images/laptop/dell-3.png",
+            img4:"assests/images/laptop/dell-4.png",
             name:"XPS 13 2-in-1 Laptop",
             type:"laptop",
             quantity:3,
@@ -182,8 +182,8 @@ export const Context = ({ children }) =>{
         },
         {
             id:17,
-            image:"assests/images/laptop/lenova-1.jpg",
-            img2:"assests/images/laptop/lenova-2.jpg",
+            image:"assests/images/laptop/lenova-1.png",
+            img2:"assests/images/laptop/lenova-2.png",
             img3:"assests/images/laptop/mac-3-removebg-preview.png",
             img4:"assests/images/laptop/lenova-4.jpg",
             name:"ThinkPad E14-13th Gen Intel",
@@ -294,6 +294,7 @@ const info = {
     search,
     searchTerm,
     randomItem,
+    setRandomItem,
     setRandomProduct
 }
 

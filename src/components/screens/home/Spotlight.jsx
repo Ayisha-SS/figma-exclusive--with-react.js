@@ -63,9 +63,9 @@ const settings = {
       <Slider {...settings} >
         {data.map((item,index) => 
         // <Link to={`/product/${item.type}?id=${item.id}`}>
-        <div key={index} className='w-[1169px] h-[453px] '>
+        <div key={index} className='w-full h-[453px] '>
           <div className='w-fit h-[fit]'>
-            <img src={require(`../../../${item.image}`)} alt={item.category} />
+            <img src={require(`../../../${item.image}`)} alt={item.category} className="w-full h-full object-cover"/>
           </div>
         </div>
         // </Link>

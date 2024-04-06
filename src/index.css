@@ -26,3 +26,11 @@
 .slick-dots li button:before {
   color: transparent !important;
 }
+.product-button{
+  display: none;
+}
+.product-image:hover  .product-button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

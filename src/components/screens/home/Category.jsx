@@ -35,7 +35,7 @@ const data = [
     },
     {
         name:"Camera",
-        image:"assests/images/camera/Category-Camera.jpg",
+        image:"assests/images/camera/Category-Camera.svg",
         type:"camera"
     },
     {
@@ -50,7 +50,7 @@ const data = [
     },
     {
         name:"Laptop",
-        image:"assests/images/laptop/Category-Laptop.jpg",
+        image:"assests/images/laptop/Category-Laptop.png",
         type:"laptop"
     },
     {
