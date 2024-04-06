@@ -1,55 +1,53 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { CiHeart } from "react-icons/ci";
-import { useParams } from 'react-router-dom';
-// import DataContext from '../../context/Store';
 import { useDataContext } from '../../context/Store';
 import { useLocation } from 'react-router-dom'; 
+import { PiEyeLight } from "react-icons/pi";
+import { Link } from 'react-router-dom';
 
-function ProductDetail() {
 
-    // const { id } = useParams();
+function ProductDetail(props) {
+
     const { search } = useLocation();
     const params = new URLSearchParams(search);
     const id = params.get('id');
-    const { data } = useDataContext();
+    const { data, randomItem } = useDataContext();
 
     const [selectedImage, setSelectedImage] = useState('');
 
     const handleImageClick = (image) => {
         setSelectedImage(image);
     };
+
+    const [ count, setCount ] = useState(1);
+
+    const decreaseCount = () => {
+        if(count > 1){
+            setCount(count - 1);
+        }
+    };
+
+    const increaseCount = () => {
+            setCount(count + 1);
+    };
      
+    
     if(!data){
         return(
             <div>Loading....</div>
             )
         }
         const product = data.find((item) => item.id === parseInt(id));
-
-       
   return (
     <>
         <div className='py-20'>
             <div className='wrapper'>
                 <div>
-                    <h4 className='text-sm leading-5 font-normal text-[#000] '>Account / { product.type} / <span className='text-[#000]'>{product.name}</span></h4>
+                    <h4 className='text-sm leading-5 font-normal text-[#000]'>Account / { product.type} / <span className='text-[#000]'>{product.name}</span></h4>
                 </div>
                 <div className='flex py-20 mb-12'>
-                    <div className='flex items-center'>
+                    <div className='flex '>
                         <div className='flex flex-col gap-4'>
-                            {/* <div className='bg-[#00000014] w-[30%] rounded'>
-                                <img src={require(`../../../${product.image}`)} alt="Zerbo-1" />
-                            </div>
-                            <div className='bg-[#00000014] w-[30%] rounded'>
-                                <img src={require(`../../../${product.img2}`)} alt="Zerbo-3" />
-                            </div>
-                            <div className='bg-[#00000014] w-[30%] rounded'>
-                                <img src={require(`../../../${product.img3}`)} alt="Zerbo-2" />
-                            </div>
-                            <div className='bg-[#00000014] w-[30%] rounded'>
-                                <img src={require(`../../../${product.img4}`)} alt="Zerbo-4" />
-                            </div> */}
-
                             {[product.image, product.img2, product.img3, product.img4].map((image, index) => (
                                 <div
                                     key={index}
@@ -63,7 +61,6 @@ function ProductDetail() {
                         </div>
                         <div className='bg-[#00000014] rounded px-12 py-28 w-fit'>
                             <div className=''>
-                                {/* <img src={require(`../../../${product.image}`)} alt={product.name} /> */}
                                 <img src={require(`../../../${selectedImage || product.image}`)} alt={product.name} />
                             </div>
                         </div>
@@ -77,7 +74,7 @@ function ProductDetail() {
                                 <span className=' opacity-[50%]'>|</span>
                                 <span className='text-sm leading-5 font-normal opacity-[50%] text-[#00ff66]'>In Stock</span>
                             </div>
-                            <h4 className='text-2xl leading-6 font-normal '>${product.price}</h4>
+                            <h4 className='text-2xl leading-6 font-normal '>${product.price * count}</h4>
                             <span className='text-sm leading-5 font-normal mb-4 text-[#000] w-[70%]'>PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.</span>
                         </div>
                         <hr />
@@ -92,9 +89,9 @@ function ProductDetail() {
                             </div>
                             <div className='flex gap-4 mb-3'>
                                 <div>
-                                    <button className='w-10 h-10 rounded-l border border-[#5e5d5d]'>-</button>
-                                    <span className='px-8 py-2 border border-[#5e5d5d] '>1</span>
-                                    <button className='w-10 h-10 rounded-r border border-[#5e5d5d]'>+</button>
+                                    <button className='w-10 h-10 rounded-l border border-[#5e5d5d]' onClick={decreaseCount}>-</button>
+                                    <span className='px-8 py-2 border border-[#5e5d5d] '>{count}</span>
+                                    <button className='w-10 h-10 rounded-r border border-[#5e5d5d]' onClick={increaseCount}>+</button>
                                 </div>
                                 <div>
                                     <button className='bg-[#DB4444] text-[#FAFAFA] py-[10px] px-[48px] rounded'>Buy Now</button>
@@ -117,7 +114,32 @@ function ProductDetail() {
                         <h5 className='text-base font-semibold text-[#DB4444] leading-5'>Related Items</h5>
                     </div>
                     <div className='py-10'>
-
+                       
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-3'>
+                    { randomItem.map((item,index)=>(
+                    <div key={index} className='flex flex-col  justify-center mb-3'>
+                    {/* <Link to={`/product/${item.type}?id=${item.id}`}> */}
+                        <div className='w-[270px] h-[250px] bg-[#00000014] rounded flex items-center justify-center relative'>
+                            <div className='w-[80%]'>
+                                <img src={require(`../../../${item.image}`)} alt={item.name} />
+                            </div>
+                            <div className='flex flex-col gap-2 absolute top-3 right-5'>
+                                <CiHeart className='bg-[#fff] rounded-full w-[30px] h-[30px] p-1'/>
+                                <PiEyeLight className='bg-[#fff] rounded-full w-[30px] h-[30px] p-1'/>
+                            </div>
+                        </div>
+                        <div className='flex flex-col mt-4'>
+                        <Link to={`/product/${item.type}?id=${item.id}`}><h3 className='text-base leading-6 font-medium mb-1 hover:underline hover:text-blue-600'>{item.name}</h3></Link>
+                            <div className='flex gap-3'>
+                                <span className='text-base leading-6 font-medium text-[#DB4444]'>${item.price}</span>
+                                <span>*****</span>
+                                <span>({item.quantity})</span>
+                            </div>
+                        </div>
+                    {/* </Link> */}
+                </div>     
+                    ))}
+                    </div>
                     </div>
                 </div>
             </div>

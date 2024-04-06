@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import { FaArrowLeft } from "react-icons/fa6";
 import { FaArrowRight } from "react-icons/fa6";
-// import { useDataContext } from '../../context/Store';
 import { useDataContext } from '../../context/Store';
 
 function Category() {
 
-    const { setSelectedCategory} = useDataContext();
+    const { selectedCategory, setSelectedCategory} = useDataContext();
 
     const handleCategoryType = (event,categoryType) => {
         event.preventDefault();
@@ -103,8 +102,13 @@ const handlePrevious = () => {
             <div className='flex justify-between '>
 
                 {data.slice(slide, slide + 6).map((product, index) => (
-                <div className='border border-[#000] flex flex-col p-4 rounded w-[170px] h-[145px] items-center justify-center cursor-pointer' onClick={(e) => handleCategoryType(e,product.type)}>
-                    <div key={index} className=' mb-3 w-[56px] h-[56px] ' >
+                <div 
+                    key={index}
+                    className={`border flex flex-col p-4 rounded w-[170px] h-[145px] items-center justify-center cursor-pointer ${
+                        selectedCategory === product.type ? 'bg-red-500' : ''
+                    }`} 
+                    onClick={(e) => handleCategoryType(e,product.type)}>
+                    <div  className=' mb-3 w-[56px] h-[56px] ' >
                         <img src={require(`../../../${product.image}`)} alt={product.name} style={{ width: '100%', height: 'auto' }} />
                     </div>
                     <h5 className='text-base text-center font-semibold leading-6' >

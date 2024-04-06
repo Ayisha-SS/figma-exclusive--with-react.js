@@ -272,6 +272,11 @@ export const Context = ({ children }) =>{
 
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [ searchTerm, setSearchTerm ] = useState('');
+    const [ randomItem, setRandomItem ] = useState([]);
+
+    const setRandomProduct = (randomProduct) => {
+        setRandomItem(randomProduct);
+    };
 
     const search = (term) => {
         setSearchTerm(term.toLowerCase().trim());
@@ -287,7 +292,9 @@ const info = {
     selectedCategory,
     setSelectedCategory,
     search,
-    searchTerm
+    searchTerm,
+    randomItem,
+    setRandomProduct
 }
 
     return (

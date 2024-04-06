@@ -4,7 +4,6 @@ import TopBar from '../../includes/topbar/TopBar'
 import Header from '../../includes/header/Header'
 import ProductDetail from './ProductDetail'
 import FooterItem from '../../includes/footer/FooterItem'
-// import { Context } from '../../context/Store'
 
 function Product() {
   return (
