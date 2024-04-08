@@ -5,7 +5,10 @@ function TopBar() {
   return (
     <div className='bg-black font-roboto'>
         <div className='flex items-center py-1 wrapper text-center justify-around'>
-            <h3 className='text-sm text-white capitalize'>Summer Sale for all swim suits and free express delivery - OFF 50%</h3>
+          <span className='text-white flex items-center gap-2'>
+            <h3 className='text-sm  capitalize'>Summer Sale for all swim suits and free express delivery - OFF 50%</h3>
+            <a href="#" className='underline'>ShopNow</a>
+          </span>
             <div className=' p-2'>
                 <span className='text-sm text-white flex gap-1 items-center'>English <FaAngleDown/></span>
             </div>

@@ -6,7 +6,7 @@ import { PiEyeLight } from "react-icons/pi";
 import { Link } from 'react-router-dom';
 
 
-function ProductDetail(props) {
+function ProductDetail() {
 
     const { search } = useLocation();
     const params = new URLSearchParams(search);

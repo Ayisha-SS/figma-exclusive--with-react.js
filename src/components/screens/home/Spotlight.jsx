@@ -9,43 +9,59 @@ function Spotlight() {
 const data = [
     {
       id:1,
-      category:"Phone",
-      image:"assests/images/phone/wallpaper.jpg"
+      type:"phone",
+      image:"assests/images/phone/banner.jpg",
+      name:"Samsung Galaxy S24 ultra SA AI",
+      path:"/product/phone?id=9"
     },
     {
       id:2,
-      category:"Laptop",
-      image:"assests/images/laptop/wallpaper.jpg"
+      type:"laptop",
+      image:"assests/images/laptop/banner.jpg",
+      name:"Apple M3 Macbook",
+      path:"/product/laptop?id=6"
     },
     {
       id:3,
-      category:"Computer",
-      image:"assests/images/computer/wallpaper.jpg"
+      type:"computer",
+      image:"assests/images/computer/banner.jpg",
+      name:"Asus ViVo Aio V222",
+      path:"/product/computer?id=8"
     },
     {
       id:4,
-      category:"Smart Watch",
-      image:"assests/images/watches/banner.jpg"
+      type:"smart Watch",
+      image:"assests/images/watches/banner.jpg",
+      name:"Apple Watch SE(2nd Gen)",
+      path:"/product/smartwatch?id=5"
     },
     {
       id:5,
-      category:"Keyboard",
-      image:"assests/images/keyboard/banner.jpg"
+      type:"keyboard",
+      image:"assests/images/keyboard/banner.jpg",
+      name:"MX KEYS MINI",
+      path:"/product/keyboard?id=12"
     },
     {
       id:6,
-      category:"Camera",
-      image:"assests/images/camera/banner.jpg"
+      type:"camera",
+      image:"assests/images/camera/banner.jpg",
+      name:"Meike 85mm wide Aperture Nikon Cameras",
+      path:"/product/camera?id=4"
     },
     {
       id:7,
-      category:"Shoe",
-      image:"assests/images/shoe/banner.webp"
+      type:"gaming",
+      image:"assests/images/gaming/banner.jpeg",
+      name:"Sony DualSense Wireless Controller white",
+      path:"/product/gaming?id=2"
     },
     {
       id:8,
-      category:"Headphone",
-      image:"assests/images/headphones/headphones.jpg"
+      type:"headphone",
+      image:"assests/images/headphones/banner.jpg",
+      name:"boAt Rockerz 450 Bluetooth with Mic",
+      path:"/product/headphone?id=3"
     },
 ];
 
@@ -62,13 +78,21 @@ const settings = {
     <div className='py-10 '>
       <Slider {...settings} >
         {data.map((item,index) => 
-        // <Link to={`/product/${item.type}?id=${item.id}`}>
-        <div key={index} className='w-full h-[453px] '>
-          <div className='w-fit h-[fit]'>
+        <div key={index} className='w-full h-[453px] rounded relative spotlight-image'>
+          <div className='w-fit h-[fit] rounded'>
             <img src={require(`../../../${item.image}`)} alt={item.category} className="w-full h-full object-cover"/>
           </div>
+          <div className='spotlight-content'>
+            <h3 className='text-4xl font-black'>{item.name}</h3>
+            <span className='flex gap-3 mt-2'>
+              <h4 className='text-3xl font-semibold'>Buy On</h4>
+              <Link to={item.path} >
+                <button className='text-3xl font-normal underline'>Shop now</button>
+              </Link>
+              </span>
+
+          </div>
         </div>
-        // </Link>
         )}
       </Slider>
     </div>

@@ -97,7 +97,6 @@ function FooterItem() {
                     Newsletter added Successfully...!
                     <span className='flex gap-3'>
                         <GiPartyPopper size={50} color='black'/>
-                        {/* <GiPartyPopper size={50} color='black'/> */}
                     </span>
                 </div>
             </div>
