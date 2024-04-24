@@ -48,12 +48,12 @@ function ProductDetail() {
         const product = data.find((item) => item.id === parseInt(id));
   return (
     <>
-        <div className='py-20'>
+        <div className='py-10'>
             <div className='wrapper'>
                 <div>
                     <h4 className='text-sm leading-5 font-normal text-[#000]'>Account / { product.type} / <span className='text-[#000]'>{product.name}</span></h4>
                 </div>
-                <div className='flex py-20 mb-12'>
+                <div className='flex py-10 mb-12'>
                     <div className='flex '>
                         <div className='flex flex-col gap-4 items-center justify-center'>
                             {[product.image, product.img2, product.img3, product.img4].map((image, index) => (
@@ -75,7 +75,7 @@ function ProductDetail() {
                             </div>
                         </div>
                     </div>
-                    <div className='flex flex-col ml-12'>
+                    <div className='flex flex-col ml-12 '>
                         <div className='flex flex-col gap-4'>
                             <h3 className='text-2xl leading-6 font-semibold'>{product.name}</h3>
                             <div className='flex gap-4 items-center'>
@@ -88,7 +88,7 @@ function ProductDetail() {
                             </span>
                                 <span className='text-sm leading-5 font-normal opacity-[50%]'>(120 Reviews)</span>
                                 <span className=' opacity-[50%]'>|</span>
-                                <span className='text-sm leading-5 font-normal opacity-[50%] text-[#00ff66]'>In Stock</span>
+                                <span className='text-sm leading-5 font-normal  text-black'>In Stock</span>
                             </div>
                             <h4 className='text-2xl leading-6 font-normal '>$ {product.price * count}</h4>
                             <span className='text-sm leading-5 font-normal mb-4 text-[#000] w-[70%]'>PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.</span>
@@ -116,8 +116,29 @@ function ProductDetail() {
                                     <CiHeart size={20}/>
                                 </span>
                             </div>
-                            <div className='w-[340px] h-[180px]'>
+                            {/* <div className='w-[340px] h-[180px]'>
                                 <img src={require(`../../../assests/images/Frame 911.png`)} alt="Service" />
+                            </div> */}
+
+                            <div className='border-[1px] border-black rounded w-[70%] '>
+                                <div className='flex p-4 gap-2 border-b-[1px] border-b-black'>
+                                    <div>
+                                        <img src={require(`../../../assests/images/icon-delivery.png`)} alt="" />
+                                    </div>
+                                    <div>
+                                        <p className='text-base font-medium leading-6'>Free Delivery</p>
+                                        <a className='text-xs font-medium underline'>Enter your postal code for Delivery Availability</a>
+                                    </div>
+                                </div>
+                                <div className='flex p-4 gap-2'>
+                                    <div>
+                                        <img src={require(`../../../assests/images/Icon-return.png`)} alt="" />
+                                    </div>
+                                    <div>
+                                        <p className='text-base font-medium leading-6'>Return Delivery</p>
+                                        <span className='text-xs font-medium '>Free 30 Days Delivery Returns.<a className='underline'>Details</a> </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -132,7 +153,7 @@ function ProductDetail() {
                     <div className='py-10'>  
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-3'>
                         { randomItem.map((item,index)=>(
-                        <div key={index} className='flex flex-col  justify-center mb-3'>
+                        <div key={index} className='flex justify-center mb-3'>
                             <Link to={`/product/${item.type}?id=${item.id}`}>
                                 <div className='w-[270px] h-[250px] bg-[#00000014] rounded flex items-center justify-center relative product-image'>
                                     <div className='w-[80%]'>

@@ -105,11 +105,11 @@ const handlePrevious = () => {
                 <div 
                     key={index}
                     className={`border flex flex-col p-4 rounded w-[170px] h-[145px] items-center justify-center cursor-pointer ${
-                        selectedCategory === product.type ? 'bg-red-500' : ''
+                        selectedCategory === product.type ? 'bg-red-500 text-white ' : ''
                     }`} 
                     onClick={(e) => handleCategoryType(e,product.type)}>
                     <div  className=' mb-3 w-[56px] h-[56px] ' >
-                        <img src={require(`../../../${product.image}`)} alt={product.name} style={{ width: '100%', height: 'auto' }} />
+                        <img src={require(`../../../${product.image}`)} alt={product.name} style={{ width: '100%', height: 'auto',filter: selectedCategory === product.type ? 'brightness(0) invert(1)' : 'none' }} />
                     </div>
                     <h5 className='text-base text-center font-semibold leading-6' >
                         {product.name}

@@ -13,14 +13,14 @@ const handleSearch = (e) => {
 
   return (
     <div className='flex items-center gap-3'>
-        <div className=' flex items-center '>
+        <div className='flex items-center relative'>
             <input 
                 type="text" 
-                placeholder='What are you looking for?' 
+                placeholder='What are you looking for? ' 
                 className='bg-[#00000014] text-sm rounded py-2 pl-4 pr-16'
                 onChange={handleSearch}
             />
-            <CiSearch className='box-content absolute right-[210px]  size-6'/>
+            <CiSearch className='absolute right-[10px] size-6 '/>
         </div>
         <div>
             <span>
