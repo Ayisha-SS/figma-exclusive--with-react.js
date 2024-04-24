@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-
+import { useMemo,useEffect } from "react";
 const DataContext = createContext();
 
 export const Context = ({ children }) =>{
@@ -282,9 +282,21 @@ export const Context = ({ children }) =>{
         setSearchTerm(term.toLowerCase().trim());
     };
 
-    const filteredData = data.filter(item => {
-        return item.name.toLowerCase().includes(searchTerm) || searchTerm === '';
-    });
+    // const filteredData = data.filter(item => {
+    //     return item.name.toLowerCase().includes(searchTerm) || searchTerm === '';
+    // });
+
+    const filteredData = useMemo(() => {
+        return data.filter(item => {
+            return item.name.toLowerCase().includes(searchTerm) || searchTerm === '';
+        });
+    }, [data, searchTerm]);
+
+    useEffect(() => {
+        const shuffled = data.sort(() => 0.5 - Math.random());
+        const selected = shuffled.slice(0, 4);
+        setRandomItem(selected);
+    }, [data]); 
 
 const info = {
     data:filteredData,
