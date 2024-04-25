@@ -292,11 +292,11 @@ export const Context = ({ children }) =>{
         });
     }, [data, searchTerm]);
 
-    useEffect(() => {
-        const shuffled = data.sort(() => 0.5 - Math.random());
-        const selected = shuffled.slice(0, 4);
-        setRandomItem(selected);
-    }, [data]); 
+    // useEffect(() => {
+    //     const shuffled = data.sort(() => 0.5 - Math.random());
+    //     const selected = shuffled.slice(0, 4);
+    //     setRandomItem(selected);
+    // }, [data]); 
 
 const info = {
     data:filteredData,

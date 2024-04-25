@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { FaArrowLeft } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowLeft,FaArrowRight } from "react-icons/fa6";
 import { useDataContext } from '../../context/Store';
 
 function Category() {
@@ -99,12 +98,12 @@ const handlePrevious = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex justify-between '>
+            <div className='flex justify-between gap-8 max-[768px]:flex-wrap'>
 
                 {data.slice(slide, slide + 6).map((product, index) => (
                 <div 
                     key={index}
-                    className={`border flex flex-col p-4 rounded w-[170px] h-[145px] items-center justify-center cursor-pointer ${
+                    className={`border flex flex-col p-4 rounded w-[170px] h-[145px] items-center justify-center cursor-pointer sm:w-[45%] md:w-[30%] lg:[20%] ${
                         selectedCategory === product.type ? 'bg-red-500 text-white ' : ''
                     }`} 
                     onClick={(e) => handleCategoryType(e,product.type)}>
