@@ -13,7 +13,7 @@ const handleSearch = (e) => {
 
   return (
     <div className='flex items-center gap-3'>
-        <div className='flex items-center relative'>
+        <div className='flex items-center relative search'>
             <input 
                 type="text" 
                 placeholder='What are you looking for? ' 
@@ -22,6 +22,7 @@ const handleSearch = (e) => {
             />
             <CiSearch className='absolute right-[10px] size-6 '/>
         </div>
+            <CiSearch className='size-6 '/>
         <div>
             <span>
                 <CiHeart className='size-7'/>

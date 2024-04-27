@@ -30,12 +30,12 @@ function ProductCard() {
     return (
         <>
             <div className='py-10'>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-3 '>
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 min-[980px]:grid-cols-3 lg:grid-cols-4 gap-8 mb-3 '>
                     {filteredProduct.slice(0, visibleItem).map((item, index) => (
                         <div key={index} className='flex justify-center mb-3'>
                             <Link to={`/product/${item.type}?id=${item.id}`}>
-                                <div className='w-[270px] h-[250px] bg-[#00000014] rounded flex items-center justify-center relative product-image'>
-                                    <div className='p-10'>
+                                <div className='h-[250px] px-5 bg-[#00000014] rounded flex items-center justify-center relative product-image'>
+                                    <div className='p-10 lg:p-5'>
                                         <img src={require(`../../../${item.image}`)} alt={item.name} />
                                         <button className="absolute -bottom-1 right-0 w-full bg-black text-white py-2 px-4 rounded opacity-90 product-button">
                                             <Link to={`/product/${item.type}?id=${item.id}`}> Add to Cart</Link>

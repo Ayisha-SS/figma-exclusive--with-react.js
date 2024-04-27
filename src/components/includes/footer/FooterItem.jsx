@@ -32,7 +32,7 @@ function FooterItem() {
   return (
     <>
         <div className='bg-[#000] py-8'>
-            <div className='wrapper flex py-10 text-[#FAFAFA] justify-between'>
+            <div className='wrapper flex py-10 text-[#FAFAFA] justify-between sm:gap-y-10 max-md:flex-wrap'>
                 <div className='flex flex-col gap-6'>
                     <div>
                         <img src={require(`../../../assests/images/footer-logo.png`)} alt="Logo" />

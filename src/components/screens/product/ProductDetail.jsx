@@ -69,14 +69,14 @@ function ProductDetail() {
                             ))}
 
                         </div>
-                        <div className='bg-[#00000014] rounded flex items-center justify-center w-[500px] h-[600px] ml-6  xl:h-[500px]'>
+                        <div className='bg-[#00000014] rounded flex items-center justify-center w-[500px] h-[600px] ml-6  '>
                             <div className='w-[90%]'>
                                 <img src={require(`../../../${selectedImage || product.image}`)} alt={product.name} />
                             </div>
                         </div>
                     </div>
                     <div className='flex flex-col px-12 w-[50%]'>
-                        <div className='flex flex-col gap-4'>
+                        <div className='flex flex-col gap-4 '>
                             <h3 className='text-2xl leading-6 font-semibold'>{product.name}</h3>
                             <div className='flex gap-4 items-center'>
                             <span className='flex items-center'>
@@ -91,10 +91,10 @@ function ProductDetail() {
                                 <span className='text-sm leading-5 font-normal  text-black'>In Stock</span>
                             </div>
                             <h4 className='text-2xl leading-6 font-normal '>$ {product.price * count}</h4>
-                            <span className='text-sm leading-5 font-normal mb-4 text-[#000] '>PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.</span>
+                            <span className='text-sm leading-5 font-normal mb-8 text-[#000] w-[70%]'>PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.</span>
                         </div>
                         <hr className='w-[80%]'/>
-                        <div className='flex flex-col gap-8 mt-4'>
+                        <div className='flex flex-col gap-8 mt-8'>
                             <div className='flex gap-6 items-center'>
                                 <span className='text-xl leading-5 font-normal'>Size:</span>
                                 <button className='text-sm leading-5 font-medium border border-[#000] rounded w-8 h-8'>XS</button>
@@ -151,12 +151,12 @@ function ProductDetail() {
                         <h5 className='text-base font-semibold text-[#DB4444] leading-5'>Related Items</h5>
                     </div>
                     <div className='py-10'>  
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-3'>
+                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-3'>
                         { randomItem.map((item,index)=>(
                         <div key={index} className='flex justify-center mb-3'>
                             <Link to={`/product/${item.type}?id=${item.id}`}>
-                                <div className='w-[270px] h-[250px] bg-[#00000014] rounded flex items-center justify-center relative product-image'>
-                                    <div className='w-[80%]'>
+                                <div className='h-[250px] px-5 bg-[#00000014] rounded flex items-center justify-center relative product-image'>
+                                    <div className='p-10'>
                                         <img src={require(`../../../${item.image}`)} alt={item.name} />
                                             <button className="absolute -bottom-1 right-0 w-full bg-black text-white py-2 px-4 rounded opacity-90 product-button">
                                                 Add to Cart

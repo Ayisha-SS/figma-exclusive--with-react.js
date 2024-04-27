@@ -47,3 +47,28 @@
   color: #DB4444;
   border-radius: 5px;
 }
+.menu-item{
+  display: flex;
+}
+.menu{
+  display: none;
+}
+.menu-toggle{
+  display: none;
+}
+.search{
+  display: none;
+}
+
+@media(max-width:768px){
+  .menu-item{
+    display: none;
+  }
+  .menu{
+    display: flex;
+  }
+  /* .menu-toggle{
+    display: flex;
+  } */
+ 
+}
