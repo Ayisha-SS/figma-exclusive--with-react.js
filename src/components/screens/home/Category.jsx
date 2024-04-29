@@ -4,7 +4,7 @@ import { useDataContext } from '../../context/Store';
 
 function Category() {
 
-    const { selectedCategory, setSelectedCategory} = useDataContext();
+    const { selectedCategory, setSelectedCategory } = useDataContext();
 
     const handleCategoryType = (event,categoryType) => {
         event.preventDefault();
