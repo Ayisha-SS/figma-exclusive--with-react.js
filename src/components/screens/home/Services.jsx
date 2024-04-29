@@ -3,8 +3,8 @@ import React from 'react'
 function Services() {
   return (
     <>
-        <div className='py-20 px-20 wrapper md:pt-10'>
-            <div className='flex justify-center items-center gap-20 mb- sm:gap-4 md:gap-6 min-[980px]:gap-8 lg:gap-10'>
+        <div className='py-20 px-20 wrapper max-[540px]:pt-5 md:pt-10'>
+            <div className='flex justify-center items-center gap-20 max-[540px]:flex-wrap max-[540px]:gap-10 sm:gap-4 md:gap-6 min-[980px]:gap-8 lg:gap-10'>
                 <div className='flex flex-col gap-6 items-center xl:whitespace-nowrap '>
                     <div className='w-[50%] md:w-[40%]'>
                         <img src={require(`../../../assests/images/Services (1).png`)} alt="Service" />

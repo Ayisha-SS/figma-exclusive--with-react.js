@@ -32,7 +32,7 @@ function FooterItem() {
   return (
     <>
         <div className='bg-[#000] py-8'>
-            <div className='wrapper flex py-10 text-[#FAFAFA] justify-between sm:gap-y-10 max-md:flex-wrap'>
+            <div className='wrapper flex py-10 text-[#FAFAFA] justify-between max-[540px]:gap-y-10 sm:gap-y-10 max-md:flex-wrap'>
                 <div className='flex flex-col gap-6'>
                     <div>
                         <img src={require(`../../../assests/images/footer-logo.png`)} alt="Logo" />
@@ -64,14 +64,14 @@ function FooterItem() {
                     <h6 className='text-base leading-6 font-normal'><a href="#">Wishlist</a></h6>
                     <h6 className='text-base leading-6 font-normal'><a href="#">Shop</a></h6>
                 </div>
-                <div className='flex flex-col gap-4'>
-                    <h3 className='text-xl font-medium leading-7 mb-3'><a href="#">Quick Link</a></h3>
+                <div className='flex flex-col gap-4 '>
+                    <h3 className='text-xl font-medium leading-7 mb-3 '><a href="#">Quick Link</a></h3>
                     <h6 className='text-base leading-6 font-normal'><a href="#">Privacy Policy</a></h6>
                     <h6 className='text-base leading-6 font-normal'><a href="#">Terms of Use</a></h6>
                     <h6 className='text-base leading-6 font-normal'><a href="#">FAQ</a></h6>
                     <h6 className='text-base leading-6 font-normal'><a href="#">Contacts</a></h6>
                 </div>
-                <div className='flex flex-col'>
+                <div className='flex flex-col '>
                     <h3 className='text-xl font-medium leading-7 mb-7'>Download App</h3>
                     <h6 className='text-sm leading-[18px] font-medium opacity-[40%] mb-4'>Save $3 with App New User Only</h6>
                     <div className='flex gap-1'>

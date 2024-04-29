@@ -76,7 +76,7 @@ const handlePrevious = () => {
   return (
     <>
         <div className='pb-10'>
-            <div className='mb-20'>
+            <div className='mb-20 max-[480px]:mb-10'>
                 <div className='flex items-center mb-5'>
                     <svg width={40} height={40}>
                         <rect width="20" height="40"  rx="4" ry="4" fill="#DB4444" />
@@ -84,7 +84,7 @@ const handlePrevious = () => {
                     <h5 className='text-base font-semibold text-[#DB4444] leading-5'>Categories</h5>
                 </div>
                 <div className='flex justify-between'>
-                    <h4 className='text-[36px] font-semibold leading-10'>Browse By Category</h4>
+                    <h4 className='max-[360px]:text-[26px] text-[36px] font-semibold leading-10'>Browse By Category</h4>
                     <div className='flex gap-2'>
                     <FaArrowLeft 
                         className='bg-[#00000014] rounded-full w-[35px] h-[35px] p-2'
@@ -98,7 +98,7 @@ const handlePrevious = () => {
                     </div>
                 </div>
             </div>
-            <div className='flex justify-between gap-8 max-[768px]:flex-wrap'>
+            <div className='flex justify-between gap-8 max-[360px]:gap- max-[360px]:items-center max-[768px]:flex-wrap'>
 
                 {data.slice(slide, slide + 6).map((product, index) => (
                 <div 

@@ -108,9 +108,10 @@ function ProductDetail() {
                                     <div className='px-4 py-2 rounded-l border border-[#5e5d5d] cursor-pointer' onClick={decreaseCount}>-</div>
                                     <div className='px-8 py-2 border border-[#5e5d5d] '>{count}</div>
                                     <div className='px-4 py-2 rounded-r border border-[#5e5d5d] cursor-pointer' onClick={increaseCount}>+</div>
+                                    
                                 </div>
                                 <div>
-                                    <button className='bg-[#DB4444] text-[#FAFAFA] py-[10px] px-[48px] rounded'>Buy Now</button>
+                                    <button className='bg-[#DB4444] text-[#FAFAFA] py-[10px] px-[48px] rounded whitespace-nowrap'>Buy Now</button>
                                 </div>
                                 <span className='border rounded w-10 h-10 flex items-center justify-center border-[#000]'>
                                     <CiHeart size={20}/>
@@ -120,7 +121,7 @@ function ProductDetail() {
                                 <img src={require(`../../../assests/images/Frame 911.png`)} alt="Service" />
                             </div> */}
 
-                            <div className='border-[1px] border-black rounded w-[70%] '>
+                            <div className='border-[1px] border-black rounded  '>
                                 <div className='flex p-4 gap-2 border-b-[1px] border-b-black'>
                                     <div>
                                         <img src={require(`../../../assests/images/icon-delivery.png`)} alt="" />
