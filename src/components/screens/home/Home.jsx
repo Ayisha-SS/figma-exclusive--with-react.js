@@ -8,11 +8,17 @@ import ProductCard from '../../general/card/ProductCard'
 import Services from './Services'
 import FooterItem from '../../includes/footer/FooterItem'
 
+import titleImg from "../../../assests/images/title.png"
+
 function Home() {
   return (
     <>
       <Helmet>
           <title>Exclusive | Home</title>
+      </Helmet>
+      <Helmet>
+      <img src={titleImg} alt="" />
+
       </Helmet>
       <TopBar/>
       <Header/>
