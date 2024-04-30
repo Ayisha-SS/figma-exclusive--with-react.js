@@ -35,7 +35,7 @@ function ProductCard() {
                         <div key={index} className='flex justify-center mb-3'>
                             <Link to={`/product/${item.type}?id=${item.id}`}>
                                 <div className='h-[250px] px-5 bg-[#00000014] rounded flex items-center justify-center relative product-image '>
-                                    <div className='p-10 max-[360px]:p-[3rem] max-[480px]:p-[6rem] max-[540px]:p-[8rem] lg:p-'>
+                                    <div className='p-10 max-[360px]:p-[3rem] max-[480px]:p-[6rem] max-[540px]:p-[8rem] lg:p-2'>
                                         <img src={require(`../../../${item.image}`)} alt={item.name} />
                                         <button className="absolute -bottom-1 right-0 w-full bg-black text-white py-2 px-4 rounded opacity-90 product-button">
                                             <Link to={`/product/${item.type}?id=${item.id}`}> Add to Cart</Link>

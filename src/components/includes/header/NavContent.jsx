@@ -22,7 +22,7 @@ const handleSearch = (e) => {
             />
             <CiSearch className='absolute right-[10px] size-6 '/>
         </div>
-            <CiSearch className='size-6 '/>
+            <CiSearch className='size-6 search-icon'/>
         <div>
             <span>
                 <CiHeart className='size-7'/>

@@ -78,16 +78,16 @@ const settings = {
     <div className='py-10 '>
       <Slider {...settings} >
         {data.map((item,index) => 
-        <div key={index} className='w-full h-[453px] rounded relative spotlight-image'>
+        <div key={index} className='w-full h-[453px] rounded relative spotlight-image '>
           <div className='w-fit h-[fit] rounded'>
-            <img src={require(`../../../${item.image}`)} alt={item.category} className="w-full h-full object-cover"/>
+            <img src={require(`../../../${item.image}`)} alt={item.category} className="w-full full object-cover"/>
           </div>
           <div className='spotlight-content'>
-            <h3 className='text-4xl font-black'>{item.name}</h3>
+            <h3 className='text-4xl font-black md:text-2xl max-[540px]:text-2xl max-[980px]:text-3xl'>{item.name}</h3>
             <span className='flex gap-3 mt-2'>
-              <h4 className='text-3xl font-semibold'>Buy On</h4>
+              <h4 className='text-3xl font-semibold md:text-xl max-[540px]:text-base max-[980px]:text-2xl'>Buy On</h4>
               <Link to={item.path} >
-                <button className='text-3xl font-normal underline'>Shop now</button>
+                <button className='text-3xl font-normal underline  max-[540px]:text-base md:text-xl max-[980px]:text-2xl'>Shop now</button>
               </Link>
               </span>
 
