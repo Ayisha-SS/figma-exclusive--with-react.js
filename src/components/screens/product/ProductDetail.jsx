@@ -53,7 +53,7 @@ function ProductDetail() {
                 <div>
                     <h4 className='text-sm leading-5 font-normal text-[#000]'>Account / { product.type} / <span className='text-[#000]'>{product.name}</span></h4>
                 </div>
-                <div className='flex py-10 mb-12'>
+                <div className='flex py-10 mb-12 max-[1080px]:flex-wrap'>
                     <div className='flex '>
                         <div className='flex flex-col gap-4 items-center justify-center'>
                             {[product.image, product.img2, product.img3, product.img4].map((image, index) => (
@@ -69,7 +69,7 @@ function ProductDetail() {
                             ))}
 
                         </div>
-                        <div className='bg-[#00000014] rounded flex items-center justify-center w-[500px] h-[600px] ml-6  '>
+                        <div className='bg-[#00000014] rounded flex items-center justify-center w-[500px] h-[600px] ml-6 '>
                             <div className='w-[90%]'>
                                 <img src={require(`../../../${selectedImage || product.image}`)} alt={product.name} />
                             </div>

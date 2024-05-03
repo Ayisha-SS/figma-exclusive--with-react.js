@@ -83,7 +83,7 @@ const settings = {
             <img src={require(`../../../${item.image}`)} alt={item.category} className="w-full full object-cover"/>
           </div>
           <div className='spotlight-content'>
-            <h3 className='text-4xl font-black md:text-2xl max-[540px]:text-2xl max-[980px]:text-3xl'>{item.name}</h3>
+            <h3 className='text-4xl font-black md:text-2xl max-[640px]:text-2xl min-[980px]:text-3xl'>{item.name}</h3>
             <span className='flex gap-3 mt-2'>
               <h4 className='text-3xl font-semibold md:text-xl max-[540px]:text-base max-[980px]:text-2xl'>Buy On</h4>
               <Link to={item.path} >
