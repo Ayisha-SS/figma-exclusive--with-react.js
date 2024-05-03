@@ -53,7 +53,7 @@ function ProductDetail() {
                 <div>
                     <h4 className='text-sm leading-5 font-normal text-[#000]'>Account / { product.type} / <span className='text-[#000]'>{product.name}</span></h4>
                 </div>
-                <div className='flex py-10 mb-12 max-[1080px]:flex-wrap'>
+                <div className='flex py-10 mb-12'>
                     <div className='flex '>
                         <div className='flex flex-col gap-4 items-center justify-center'>
                             {[product.image, product.img2, product.img3, product.img4].map((image, index) => (
@@ -69,7 +69,7 @@ function ProductDetail() {
                             ))}
 
                         </div>
-                        <div className='bg-[#00000014] rounded flex items-center justify-center w-[500px] h-[600px] ml-6 '>
+                        <div className='bg-[#00000014] rounded flex items-center justify-center w-[500px] h-[600px] ml-6 lg:w-[px] '>
                             <div className='w-[90%]'>
                                 <img src={require(`../../../${selectedImage || product.image}`)} alt={product.name} />
                             </div>
@@ -107,8 +107,7 @@ function ProductDetail() {
                                 <div className='flex items-center'>
                                     <div className='px-4 py-2 rounded-l border border-[#5e5d5d] cursor-pointer' onClick={decreaseCount}>-</div>
                                     <div className='px-8 py-2 border border-[#5e5d5d] '>{count}</div>
-                                    <div className='px-4 py-2 rounded-r border border-[#5e5d5d] cursor-pointer' onClick={increaseCount}>+</div>
-                                    
+                                    <div className='px-4 py-2 rounded-r border border-[#5e5d5d] cursor-pointer' onClick={increaseCount}>+</div>    
                                 </div>
                                 <div>
                                     <button className='bg-[#DB4444] text-[#FAFAFA] py-[10px] px-[48px] rounded whitespace-nowrap'>Buy Now</button>
@@ -124,7 +123,7 @@ function ProductDetail() {
                             <div className='border-[1px] border-black rounded  '>
                                 <div className='flex p-4 gap-2 border-b-[1px] border-b-black'>
                                     <div>
-                                        <img src={require(`../../../assests/images/icon-delivery.png`)} alt="" />
+                                        <img src={require(`../../../assests/images/icon-delivery.png`)} alt="Delivery" />
                                     </div>
                                     <div>
                                         <p className='text-base font-medium leading-6'>Free Delivery</p>
@@ -133,7 +132,7 @@ function ProductDetail() {
                                 </div>
                                 <div className='flex p-4 gap-2'>
                                     <div>
-                                        <img src={require(`../../../assests/images/Icon-return.png`)} alt="" />
+                                        <img src={require(`../../../assests/images/Icon-return.png`)} alt="Return" />
                                     </div>
                                     <div>
                                         <p className='text-base font-medium leading-6'>Return Delivery</p>
@@ -152,15 +151,15 @@ function ProductDetail() {
                         <h5 className='text-base font-semibold text-[#DB4444] leading-5'>Related Items</h5>
                     </div>
                     <div className='py-10'>  
-                        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-3'>
+                        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 min-[980px]:grid-cols-3 lg:grid-cols-4 gap-8 mb-3'>
                         { randomItem.map((item,index)=>(
                         <div key={index} className='flex justify-center mb-3'>
                             <Link to={`/product/${item.type}?id=${item.id}`}>
                                 <div className='h-[250px] px-5 bg-[#00000014] rounded flex items-center justify-center relative product-image'>
-                                    <div className='p-10'>
+                                    <div className='p-10 max-[360px]:p-[3rem] max-[480px]:p-[6rem] max-[540px]:p-[8rem] md:p-[3rem]'>
                                         <img src={require(`../../../${item.image}`)} alt={item.name} />
                                             <button className="absolute -bottom-1 right-0 w-full bg-black text-white py-2 px-4 rounded opacity-90 product-button">
-                                                Add to Cart
+                                                <Link to={`/product/${item.type}?id=${item.id}`}> Add to Cart</Link>
                                             </button>                
                                     </div>
                                     <div className='flex flex-col gap-2 absolute top-3 right-5'>
