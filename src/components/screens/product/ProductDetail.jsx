@@ -53,13 +53,13 @@ function ProductDetail() {
                 <div>
                     <h4 className='text-sm leading-5 font-normal text-[#000]'>Account / { product.type} / <span className='text-[#000]'>{product.name}</span></h4>
                 </div>
-                <div className='flex py-10 mb-12 md:flex-wrap md:gap-y-8'>
-                    <div className='flex lg:w-[50%] md:w-full'>
+                <div className='flex py-10 mb-12 max-[360px]:flex-wrap max-[540px]:flex-wrap max-[540px]:gap-y-8 sm:flex-wrap md:flex-wrap sm:gap-y-8 md:gap-y-8'>
+                    <div className='flex  lg:w-[50%] max-md:w-full'>
                         <div className='flex flex-col gap-4 items-center justify-center'>
                             {[product.image, product.img2, product.img3, product.img4].map((image, index) => (
                                 <div
                                     key={index}
-                                    className="bg-[#00000014] w-[170px] h-[138px] rounded cursor-pointer flex items-center justify-center lg:w-[120px] lg:h-[128px] md:w-[170px]"
+                                    className="bg-[#00000014] w-[170px] h-[138px] rounded cursor-pointer flex items-center justify-center max-[360px]:w-[110px] max-[360px]:h-[110px] max-[540px]:w-[130px] sm:w-[150px] md:w-[170px]"
                                     onClick={() => handleImageClick(image)}
                                 >
                                     <div className='w-[50%] '>
@@ -69,7 +69,7 @@ function ProductDetail() {
                             ))}
                         </div>
                         <div className='md:w-full'>
-                            <div className='bg-[#00000014] rounded flex items-center justify-center w-[500px] h-[600px] ml-6 lg:w-[300px] lg:h-[550px] md:w-[500px]'>
+                            <div className='bg-[#00000014] rounded flex items-center justify-center w-[500px] h-[600px] ml-6 max-[360px]:ml-3 max-[360px]:w-[200px] max-[360px]:h-[500px] max-[540px]:w-[300px] sm:w-[400px] md:w-[500px]'>
                                 <div className='w-[90%]'>
                                     <img src={require(`../../../${selectedImage || product.image}`)} alt={product.name} />
                                 </div>
@@ -77,7 +77,7 @@ function ProductDetail() {
                         </div>
                     </div>
 
-                    <div className='flex flex-col px-12 md:px-0 w-[50%] md:flex-wrap'>
+                    <div className='flex flex-col px-12 max-[540px]:px-0 sm:px-0 md:px-0 w-[50%] max-[540px]:w-full sm:w-full md:w-full md:flex-wrap'>
                         <div className='flex flex-col gap-4 '>
                             <h3 className='text-2xl leading-6 font-semibold'>{product.name}</h3>
                             <div className='flex gap-4 items-center'>
@@ -89,32 +89,32 @@ function ProductDetail() {
                                 <CiStar />
                             </span>
                                 <span className='text-sm leading-5 font-normal opacity-[50%]'>(120 Reviews)</span>
-                                <span className=' opacity-[50%]'>|</span>
-                                <span className='text-sm leading-5 font-normal  text-black'>In Stock</span>
+                                <span className='opacity-[50%]'>|</span>
+                                <span className='text-sm leading-5 font-normal text-black'>In Stock</span>
                             </div>
                             <h4 className='text-2xl leading-6 font-normal '>$ {product.price * count}</h4>
-                            <span className='text-sm leading-5 font-normal mb-8 text-[#000] w-[70%] md:w-full'>PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.</span>
+                            <span className='text-sm leading-5 font-normal mb-8 text-[#000] w-[70%] max-md:w-full'>PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.</span>
                         </div>
                         <hr className='w-[80%] md:w-full'/>
                         <div className='flex flex-col gap-8 mt-8'>
                             <div className='flex gap-6 items-center'>
                                 <span className='text-xl leading-5 font-normal'>Size:</span>
-                                <button className='text-sm leading-5 font-medium border border-[#000] rounded w-8 h-8'>XS</button>
-                                <button className='text-sm leading-5 font-medium border border-[#000] rounded w-8 h-8'>S</button>
-                                <button className='text-sm leading-5 font-medium border border-[#000] rounded w-8 h-8'>M</button>
-                                <button className='text-sm leading-5 font-medium border border-[#000] rounded w-8 h-8'>L</button>
-                                <button className='text-sm leading-5 font-medium border border-[#000] rounded w-8 h-8'>XL</button>
+                                <button className='text-sm leading-5 font-medium border border-[#000] rounded w-8 h-8 max-[360px]:w-6 max-[360px]:h-6'>XS</button>
+                                <button className='text-sm leading-5 font-medium border border-[#000] rounded w-8 h-8 max-[360px]:w-6 max-[360px]:h-6'>S</button>
+                                <button className='text-sm leading-5 font-medium border border-[#000] rounded w-8 h-8 max-[360px]:w-6 max-[360px]:h-6'>M</button>
+                                <button className='text-sm leading-5 font-medium border border-[#000] rounded w-8 h-8 max-[360px]:w-6 max-[360px]:h-6'>L</button>
+                                <button className='text-sm leading-5 font-medium border border-[#000] rounded w-8 h-8 max-[360px]:w-6 max-[360px]:h-6'>XL</button>
                             </div>
-                            <div className='flex gap-4 mb-3 '>
+                            <div className='flex gap-4 mb-3 max-[540px]:gap-2'>
                                 <div className='flex items-center'>
-                                    <div className='px-4 py-2 rounded-l border border-[#5e5d5d] cursor-pointer' onClick={decreaseCount}>-</div>
-                                    <div className='px-8 py-2 border border-[#5e5d5d] '>{count}</div>
-                                    <div className='px-4 py-2 rounded-r border border-[#5e5d5d] cursor-pointer' onClick={increaseCount}>+</div>    
+                                    <div className='px-4 py-2 rounded-l border border-[#5e5d5d] cursor-pointer max-[360px]:px-2 max-[360px]:py-1' onClick={decreaseCount}>-</div>
+                                    <div className='px-8 py-2 border border-[#5e5d5d] max-[360px]:px-6 max-[360px]:py-1'>{count}</div>
+                                    <div className='px-4 py-2 rounded-r border border-[#5e5d5d] cursor-pointer max-[360px]:px-2 max-[360px]:py-1' onClick={increaseCount}>+</div>    
                                 </div>
                                 <div>
-                                    <button className='bg-[#DB4444] text-[#FAFAFA] py-[10px] px-[48px] rounded whitespace-nowrap'>Buy Now</button>
+                                    <button className='bg-[#DB4444] text-[#FAFAFA] py-[10px] px-[48px] rounded whitespace-nowrap max-[360px]:py-[5px] max-[360px]:px-[24px]'>Buy Now</button>
                                 </div>
-                                <span className='border rounded w-10 h-10 flex items-center justify-center border-[#000]'>
+                                <span className='border rounded w-10 h-10 flex items-center justify-center border-[#000] max-[360px]:w-8 max-[360px]:h-8'>
                                     <CiHeart size={20}/>
                                 </span>
                             </div>
