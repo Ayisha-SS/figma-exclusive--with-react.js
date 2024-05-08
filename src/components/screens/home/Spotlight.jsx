@@ -72,10 +72,30 @@ const settings = {
   slidesToShow:1,
   slidesToScroll:1,
   autoplay:true,
+  responsive: [
+    {
+      breakpoint: 1024, 
+      settings: {
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 768, 
+      settings: {
+        dots: true,
+      },
+    },
+    {
+      breakpoint: 480, 
+      settings: {
+        dots: true,
+      },
+    },
+  ],
 }
 
   return (
-    <div className='py-10 '>
+    <div className='py-10 sm:pb-5 max-[540px]:pb-1 max-[480px]:pb-0'>
       <Slider {...settings} >
         {data.map((item,index) => 
         <div key={index} className='w-full h-[453px] rounded relative spotlight-image '>

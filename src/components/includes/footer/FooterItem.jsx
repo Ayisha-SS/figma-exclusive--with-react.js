@@ -93,7 +93,7 @@ function FooterItem() {
 
         { showPopUp && (
             <div className='fixed top-0 left-0 right-0 flex items-center justify-center bg-black bg-opacity-50 z-50 w-full h-full '>
-                <div className='bg-[#FAFAFA] text-green-700 p-3 mt-3 text-4xl font-bold rounded-md z-50 w-[50%] h-[50%] shadow-neutral-950 flex flex-col gap-1 items-center justify-center'>
+                <div className='bg-[#FAFAFA] text-green-700 p-3 mt-3 text-4xl font-bold rounded-md z-50 w-[50%] h-[50%] shadow-neutral-950 flex flex-col gap-1 items-center justify-center sm:text-3xl max-[540px]:text-2xl max-[540px]:h-[40%] max-[360px]:text-xl'>
                     Newsletter added Successfully...!
                     <span className='flex gap-3'>
                         <GiPartyPopper size={50} color='black'/>

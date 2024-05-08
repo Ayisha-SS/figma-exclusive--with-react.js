@@ -54,11 +54,10 @@
   display: none;
 }
 .menu-toggle{
-  display: none;
+  display: flex;
+  flex-direction: column;
 }
-/* .search{
-  display: none;
-} */
+
 .search-icon{
   display: none;
 }
@@ -85,16 +84,26 @@
   .menu{
     display: flex;
   }
-  /* .menu-toggle{
-    display: flex;
-  } */
- 
 }
+
+@media(max-width:640px){
+  .slick-dots{
+    top: 350px;
+  }
+}
+
 @media(max-width:540px){
   .search-icon{
     display: flex;
   }
-  .search{
-    display: none;
+  
+  .slick-dots{
+    top: 300px;
+  }
+}
+
+@media(max-width:360px){
+  .slick-dots{
+    top: 200px;
   }
 }
